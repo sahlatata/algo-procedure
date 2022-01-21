@@ -1,0 +1,33 @@
+FUNCTION scalaire(a,b) :BOOLEAN 
+VAR
+    s = INTEGER :=0
+BEGIN
+   FOR i FROM 1 TO a.length STEP step 1 DO
+       s = s + a[i]*b[i]
+   END_FOR
+   
+   IF (s=0) THEN
+       RETURN =TRUE
+   ELSE
+       RETURN =FALSE
+   END_IF
+END
+ALGORITHM algoScalaire
+VAR
+ tab1:ARRAY_OF INTEGER[]
+ tab2:ARRAY_OF INTEGER[]
+ verif : BOOLEAN
+    set_declarations
+BEGIN
+IF (tab1.length = tab2.length) THEN
+verif = scalaire (tab1,tab2)
+    IF (verif= TRUE) THEN
+        Write ( two vectors are orthogonal)
+    ELSE
+        Write ( two vectors are not orthogonal)
+    END_IF
+ELSE
+   Write ( error)
+END_IF
+    
+END
